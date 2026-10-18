@@ -30,17 +30,17 @@ void main() {
   ));
 
   PerfProbe.startFrameStats();
-  runApp(const ProviderScope(child: PhoneSilentApp()));
+  runApp(const ProviderScope(child: QuietPlacesApp()));
 }
 
-class PhoneSilentApp extends ConsumerStatefulWidget {
-  const PhoneSilentApp({super.key});
+class QuietPlacesApp extends ConsumerStatefulWidget {
+  const QuietPlacesApp({super.key});
 
   @override
-  ConsumerState<PhoneSilentApp> createState() => _PhoneSilentAppState();
+  ConsumerState<QuietPlacesApp> createState() => _QuietPlacesAppState();
 }
 
-class _PhoneSilentAppState extends ConsumerState<PhoneSilentApp>
+class _QuietPlacesAppState extends ConsumerState<QuietPlacesApp>
     with WidgetsBindingObserver {
   @override
   void initState() {

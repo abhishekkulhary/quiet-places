@@ -14,7 +14,7 @@ import 'tile_cache.dart';
 /// your app" and forbids using a library's generic default. This is that
 /// string; changing it to something anonymous would put us out of compliance.
 const String osmUserAgent =
-    'QuietPlaces/1.0 (+https://github.com/phonesilent/app; contact: hello@phonesilent.app)';
+    'QuietPlaces/1.0 (+https://github.com/abhishekkulhary/quiet-places; contact: https://github.com/abhishekkulhary/quiet-places/issues)';
 
 /// Standard OSM raster tiles.
 const String osmTileUrlTemplate =

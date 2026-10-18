@@ -9,7 +9,7 @@ import 'press.dart';
 import '../../l10n/app_localizations.dart';
 import '../l10n_extensions.dart';
 
-/// The app's signature moment: the confirmation shown when PhoneSilent actually
+/// The app's signature moment: the confirmation shown when Quiet Places actually
 /// mutes the phone.
 ///
 /// Rings collapse inward and settle — sound folding into quiet — then the place

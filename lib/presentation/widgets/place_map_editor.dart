@@ -189,7 +189,7 @@ class _PlaceMapEditorState extends State<PlaceMapEditor> {
               TileLayer(
                 urlTemplate: osmTileUrlTemplate,
                 tileProvider: _tiles,
-                userAgentPackageName: 'app.phonesilent',
+                userAgentPackageName: 'com.abhishekkulhary.quietplaces',
                 maxNativeZoom: 19,
                 // Explicitly no prefetch: only what is on screen is requested.
                 panBuffer: 0,
