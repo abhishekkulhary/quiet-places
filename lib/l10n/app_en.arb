@@ -1,0 +1,421 @@
+{
+  "@@locale": "en",
+  "appName": "Quiet Places",
+  "@appName": {
+    "description": "Application name, shown in the home header"
+  },
+  "statePermissionTitle": "Location permission is off",
+  "statePermissionBody": "Distances and silencing need it.",
+  "statePermissionAction": "GRANT",
+  "stateServicesTitle": "Location services are off",
+  "stateServicesBody": "Turn them on to see distances.",
+  "stateServicesAction": "OPEN SETTINGS",
+  "stateOfflineTitle": "No connection",
+  "stateOfflineBody": "Showing saved map squares.",
+  "stateErrorAction": "TRY AGAIN",
+  "stateLoading": "Loading",
+  "homeTitle": "Your quiet\nplaces",
+  "@homeTitle": {
+    "description": "Home screen display heading; the line break is intentional"
+  },
+  "homeAddCurrent": "ADD A QUIET PLACE",
+  "@homeAddCurrent": {
+    "description": "Primary action. Deliberately not 'add current location' — it opens at where you are, but the editor lets you place it anywhere."
+  },
+  "homeAddCurrentSemantic": "Add a Quiet Place, starting from where you are",
+  "homeLoadFailed": "We couldn't load your Quiet Places.",
+  "homeEmptyTitle": "Nowhere quiet\nyet",
+  "homeEmptyBody": "Stand somewhere your phone should hush — a cinema, an office, a bedroom — and save the spot.",
+  "homePaused": "Silencing is paused",
+  "navHistory": "History",
+  "navSettings": "Settings",
+  "actionUndo": "Undo",
+  "actionRedo": "Redo",
+  "actionRetry": "RETRY",
+  "actionSearch": "Search",
+  "actionDismiss": "Dismiss",
+  "actionOpenSettings": "OPEN SETTINGS",
+  "actionAppSettings": "APP SETTINGS",
+  "actionEnterManually": "ENTER MANUALLY",
+  "placeDeleted": "Deleted \"{name}\"",
+  "@placeDeleted": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "undoLabel": "UNDO",
+  "undoSecondsRemaining": "{seconds} seconds to undo",
+  "@undoSecondsRemaining": {
+    "placeholders": {
+      "seconds": {
+        "type": "int"
+      }
+    }
+  },
+  "placeEnabledSemantic": "{name} enabled",
+  "@placeEnabledSemantic": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "placeCardSemantic": "{name}, {behaviour}, {radius} metre radius",
+  "@placeCardSemantic": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      },
+      "behaviour": {
+        "type": "String"
+      },
+      "radius": {
+        "type": "int"
+      }
+    }
+  },
+  "semanticPositionUncertain": "position uncertain",
+  "semanticDisabled": "disabled",
+  "distanceUnavailable": "Distance unavailable",
+  "distanceInsideBy": "inside by {distance}",
+  "@distanceInsideBy": {
+    "placeholders": {
+      "distance": {
+        "type": "String"
+      }
+    }
+  },
+  "distanceToEdge": "{distance} to edge",
+  "@distanceToEdge": {
+    "placeholders": {
+      "distance": {
+        "type": "String"
+      }
+    }
+  },
+  "editorTitleNew": "New Quiet Place",
+  "editorTitleEdit": "Edit Quiet Place",
+  "editorSaveNew": "SAVE QUIET PLACE",
+  "editorSaveChanges": "SAVE CHANGES",
+  "editorFieldName": "NAME",
+  "editorFieldRadius": "RADIUS",
+  "editorFieldWhenInside": "WHEN INSIDE",
+  "editorUnitMetresShort": "M",
+  "editorWaitingForPosition": "Waiting for a position — or place the pin yourself above.",
+  "editorPlacedManually": "PLACED MANUALLY",
+  "editorLocating": "LOCATING…",
+  "editorImproving": "IMPROVING…",
+  "editorHintMap": "Drag the pin to move it · long-press the map to place it somewhere else · or search an address",
+  "editorHintDial": "Drag inside the circle to move the pin, or turn on maps to place it visually",
+  "editorHintEditing": "Drag the edge handle to resize, or use the slider below",
+  "editorShowMap": "SHOW A MAP",
+  "editorShowMapSemantic": "Show a map here",
+  "editorSearchHint": "Search an address or place",
+  "editorSearchSemantic": "Search for a place",
+  "editorRadiusSemantic": "{radius} metres radius",
+  "@editorRadiusSemantic": {
+    "placeholders": {
+      "radius": {
+        "type": "int"
+      }
+    }
+  },
+  "editorRadiusUnreliable": "Under {threshold} m is unreliable on most hardware — the OS may fire late, or not at all.",
+  "@editorRadiusUnreliable": {
+    "placeholders": {
+      "threshold": {
+        "type": "int"
+      }
+    }
+  },
+  "editorDiscardTitle": "Discard changes?",
+  "editorDiscardBody": "This Quiet Place has not been saved. Your edits will be lost.",
+  "editorDiscardKeep": "KEEP EDITING",
+  "editorDiscardConfirm": "DISCARD",
+  "editorDefaultName": "Location",
+  "editorSuggestedName": "Location {number}",
+  "@editorSuggestedName": {
+    "placeholders": {
+      "number": {
+        "type": "int"
+      }
+    }
+  },
+  "overlapStricterWins": "This overlaps {names}. Where they meet, {winner} wins — the stricter setting applies.",
+  "@overlapStricterWins": {
+    "placeholders": {
+      "names": {
+        "type": "String"
+      },
+      "winner": {
+        "type": "String"
+      }
+    }
+  },
+  "overlapThisWins": "This overlaps {names}. Where they meet, {behaviour} still applies — it is the stricter setting.",
+  "@overlapThisWins": {
+    "placeholders": {
+      "names": {
+        "type": "String"
+      },
+      "behaviour": {
+        "type": "String"
+      }
+    }
+  },
+  "behaviourVibrate": "Vibrate",
+  "behaviourSilent": "Silent",
+  "behaviourDnd": "Do Not Disturb",
+  "behaviourDndShort": "DND",
+  "positionServicesOff": "Location services are off.",
+  "positionPermissionNeeded": "Quiet Places needs location permission to use where you are.",
+  "positionPermissionForever": "Location permission is permanently denied.",
+  "positionTimeoutWithFix": "Couldn't sharpen the fix — showing the best so far.",
+  "positionTimeoutNoFix": "No GPS fix yet. Indoors this can take a while.",
+  "positionUnknownFailure": "Couldn't work out where you are.",
+  "mapPreviewSemantic": "Quiet Place preview, {radius} metre radius",
+  "@mapPreviewSemantic": {
+    "placeholders": {
+      "radius": {
+        "type": "int"
+      }
+    }
+  },
+  "mapPreviewNoPosition": "Quiet Place preview, no position yet",
+  "mapCentreSemantic": "Quiet Place centre, drag to move",
+  "mapHandleSemantic": "Radius handle, drag to resize",
+  "mapRecentre": "Recentre on me",
+  "mapAttribution": "© OpenStreetMap contributors",
+  "consentTitle": "Turn on maps",
+  "consentHeading": "This is the only\npart that uses\nthe internet",
+  "consentIntro": "Everything else in Quiet Places stays on your phone. Your Quiet Places, their names, your history — none of it is ever sent anywhere, with or without maps.",
+  "consentSentTitle": "WHAT GETS SENT",
+  "consentSentBody": "Requests to OpenStreetMap for the map squares on your screen. Each request is a map square number, not your coordinates — but at street zoom a square is about 600 m across, so the squares you load do reveal roughly where the place you are editing is. We would rather say that than let you find out later.",
+  "consentSearchTitle": "SEARCH AND PLACE NAMES",
+  "consentSearchBody": "If you search for an address, that text is sent to OpenStreetMap's search service. When you finish moving the pin, its coordinates are sent once to look up a name to suggest — only when you let go, never continuously, and the answer is reused if you nudge it again. You can always type the name yourself instead.",
+  "consentNeverTitle": "WHAT NEVER GETS SENT",
+  "consentNeverBody": "Your saved places, their names, your entry and exit history, your settings. There is no analytics, no crash reporting, and no account.",
+  "consentWhoTitle": "WHO RECEIVES IT",
+  "consentWhoBody": "The OpenStreetMap Foundation's tile and search servers. They see the request and your IP address, as any website would. We send a User-Agent naming this app, which their usage policy requires, and we rate-limit what we send.",
+  "consentOffTitle": "YOU CAN TURN IT BACK OFF",
+  "consentOffBody": "Maps can be switched off again in Settings at any time, and the map cache cleared. With maps off the app makes no network requests at all.",
+  "consentFallback": "Without maps, the editor still works: you place a Quiet Place from where you are standing, or by typing coordinates, and set the radius on the dial.",
+  "consentAccept": "TURN ON MAPS",
+  "consentDecline": "KEEP THE APP OFFLINE",
+  "settingsSectionWhen": "WHEN TO ACT",
+  "settingsSectionLocation": "LOCATION",
+  "settingsSectionMaps": "MAPS",
+  "settingsSectionDevice": "THIS DEVICE",
+  "settingsSectionLanguage": "LANGUAGE",
+  "@settingsSectionLanguage": {
+    "description": "Settings section heading for the language picker."
+  },
+  "settingsLanguageTitle": "App language",
+  "@settingsLanguageTitle": {
+    "description": "Label for the language choice."
+  },
+  "settingsLanguageSystem": "System",
+  "@settingsLanguageSystem": {
+    "description": "Language option meaning follow the device language."
+  },
+  "settingsSectionHistory": "HISTORY",
+  "settingsSectionUnits": "UNITS",
+  "settingsPauseTitle": "Pause everything",
+  "settingsPauseBody": "Nothing is silenced while this is on",
+  "settingsSnoozeTitle": "Snooze for 1 hour",
+  "settingsSnoozedTitle": "Snoozed",
+  "settingsSnoozeBody": "Temporarily stop silencing",
+  "settingsSnoozeUntil": "Resumes at {time}",
+  "@settingsSnoozeUntil": {
+    "placeholders": {
+      "time": {
+        "type": "String"
+      }
+    }
+  },
+  "settingsSnoozeAction": "SNOOZE",
+  "settingsCancel": "CANCEL",
+  "settingsWarmTitle": "Keep GPS warm",
+  "settingsWarmBody": "Holds a recent fix while the app is open so adding a Quiet Place is instant. Uses a little more battery.",
+  "settingsManualTitle": "Add a Quiet Place manually",
+  "settingsManualBody": "Drop a pin somewhere you are not standing",
+  "settingsOpen": "OPEN",
+  "settingsMapsTitle": "Show map tiles",
+  "settingsMapsOn": "Map squares are fetched from OpenStreetMap as you look at them. Nothing else leaves your phone.",
+  "settingsMapsOff": "Off — the app makes no network requests at all.",
+  "settingsCacheTitle": "Map cache",
+  "settingsCacheBody": "{size} stored · tiles are reused instead of re-downloaded",
+  "@settingsCacheBody": {
+    "placeholders": {
+      "size": {
+        "type": "String"
+      }
+    }
+  },
+  "settingsCacheChecking": "Checking…",
+  "settingsClear": "CLEAR",
+  "settingsCacheCleared": "Map cache cleared",
+  "settingsRingerAvailable": "Ringer control available",
+  "settingsRingerUnavailable": "Ringer control unavailable",
+  "settingsRingerAvailableBody": "Quiet Places can change your ringer on this device.",
+  "settingsPermissionsTitle": "Permission setup",
+  "settingsPermissionsBody": "Re-run the guided checks",
+  "settingsReview": "REVIEW",
+  "settingsClearLogTitle": "Clear the log",
+  "settingsClearLogBody": "Removes every recorded entry and exit",
+  "settingsHistoryCleared": "History cleared",
+  "settingsUnitsTitle": "Distance units",
+  "settingsUnitsMetric": "Metres and kilometres",
+  "settingsUnitsImperial": "Feet and miles",
+  "historyTitle": "History",
+  "historyToday": "TODAY",
+  "historyYesterday": "YESTERDAY",
+  "historyEmptyTitle": "Nothing has happened yet",
+  "historyEmptyBody": "Every time Quiet Places silences or restores your ringer — or decides not to — it will be listed here with the reason.",
+  "historyLoadFailed": "We couldn't load your history.",
+  "historySilenced": "SILENCED",
+  "historyRestored": "RINGER RESTORED",
+  "historySwitched": "SWITCHED MODE",
+  "historyNotified": "NOTIFIED YOU",
+  "historySkippedPaused": "SKIPPED — PAUSED",
+  "historySkippedDisabled": "SKIPPED — PLACE OFF",
+  "historySkippedUnsupported": "SKIPPED — UNSUPPORTED",
+  "historySkippedOverride": "SKIPPED — YOU OVERRODE IT",
+  "historyNoChange": "NO CHANGE NEEDED",
+  "historyError": "ERROR",
+  "momentSilenced": "SILENCED",
+  "momentRestored": "RESTORED",
+  "momentNowBehaviour": "NOW {behaviour}",
+  "@momentNowBehaviour": {
+    "placeholders": {
+      "behaviour": {
+        "type": "String"
+      }
+    }
+  },
+  "momentRestoreExplain": "Your phone will go back to how you had it when you leave.",
+  "momentSemanticApplied": "{name}: phone set to {behaviour}",
+  "@momentSemanticApplied": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      },
+      "behaviour": {
+        "type": "String"
+      }
+    }
+  },
+  "momentSemanticRestored": "Ringer restored on leaving {name}",
+  "@momentSemanticRestored": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "onboardingTitle": "Setup",
+  "onboardingHeading": "A few permissions",
+  "onboardingIntro": "Silencing happens while the app is closed, so Android needs you to grant these explicitly.",
+  "onboardingDone": "DONE",
+  "onboardingSkip": "SKIP",
+  "onboardingFinish": "FINISH SETUP",
+  "onboardingFinishSemantic": "Finish setup",
+  "onboardingGranted": "granted",
+  "onboardingNotGranted": "not granted",
+  "onboardingGrant": "Grant",
+  "onboardingOpenSettings": "Open settings",
+  "onboardingRequest": "Request",
+  "permLocationTitle": "Location",
+  "permLocationBody": "To capture the spot you're standing in and detect when you arrive.",
+  "permBackgroundTitle": "Location — \"Allow all the time\"",
+  "permBackgroundBody": "Quiet Places only fire in the background with all-the-time access. Denying this means silencing works only while the app is open.",
+  "permDndTitle": "Do Not Disturb access",
+  "permDndBody": "Required to switch silent/DND modes. This one can't be a normal popup — you grant it on a dedicated system screen.",
+  "permDndAction": "Open DND settings",
+  "permNotificationsTitle": "Notifications",
+  "permNotificationsBodyIos": "iOS can't silence your ringer automatically. Instead we'll notify you on arrival so you can do it (or trigger a Shortcuts Focus automation).",
+  "permNotificationsBodyAndroid": "For the brief foreground notice while changing your ringer.",
+  "permBatteryTitle": "Ignore battery optimisation",
+  "permBatteryBody": "Aggressive battery savers can kill background delivery. Exempting Quiet Places keeps it reliable.",
+  "noteOemTitle": "ON XIAOMI / OPPO / VIVO / SAMSUNG",
+  "noteOemBody": "These brands add their own \"autostart\" or \"protected apps\" controls that stop background apps. Find Quiet Places in your phone's Battery or App-management settings and enable Autostart / Allow background activity, or Quiet Places may stop firing.",
+  "noteIosTitle": "IOS CANNOT SILENCE AUTOMATICALLY",
+  "noteIosBody": "Apple provides no API to change the ringer. For a hands-free setup, open Shortcuts → Automation → Create a Location automation for the same place and set it to turn on a Focus mode. Quiet Places still notifies you on arrival as a backup.",
+  "noteDesktopTitle": "NO RINGER ON THIS PLATFORM",
+  "noteDesktopBody": "The app runs here for testing, but automatic silencing is Android-only.",
+  "unsupportedDesktop": "This platform has no ringer to control. Quiet Places runs, but automatic silencing is available on Android only.",
+  "@unsupportedDesktop": {
+    "description": "Why the ringer cannot be controlled on desktop/web."
+  },
+  "unsupportedIos": "iOS has no public API to silence the ringer. Quiet Places will notify you on arrival instead — set up a Shortcuts Focus automation for hands-free silencing.",
+  "@unsupportedIos": {
+    "description": "Why the ringer cannot be controlled on iOS."
+  },
+  "notifChannelMomentName": "Silenced / restored",
+  "@notifChannelMomentName": {
+    "description": "Android notification channel name for silence/restore notices."
+  },
+  "notifChannelMomentDesc": "When Quiet Places changes or restores your ringer.",
+  "@notifChannelMomentDesc": {
+    "description": "Android notification channel description."
+  },
+  "notifChannelArrivalName": "Quiet Place arrivals",
+  "@notifChannelArrivalName": {
+    "description": "Android notification channel name for arrival prompts."
+  },
+  "notifChannelArrivalDesc": "Reminders to silence your phone on arrival.",
+  "@notifChannelArrivalDesc": {
+    "description": "Android notification channel description for arrival prompts."
+  },
+  "notifSilencedTitle": "{name} — now {behaviour}",
+  "@notifSilencedTitle": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      },
+      "behaviour": {
+        "type": "String"
+      }
+    }
+  },
+  "notifSilencedBody": "Quiet Places will put your ringer back when you leave.",
+  "@notifSilencedBody": {
+    "description": "Body of the silenced notification."
+  },
+  "notifRestoredTitle": "Left {name}",
+  "@notifRestoredTitle": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "notifRestoredBody": "Your ringer is back to how you had it.",
+  "@notifRestoredBody": {
+    "description": "Body of the restored notification."
+  },
+  "notifArrivalTitle": "You have arrived at {name}",
+  "@notifArrivalTitle": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "notifArrivalBody": "Silence your phone? (iOS cannot do this automatically — tap to open, or set up a Shortcuts Focus automation.)",
+  "@notifArrivalBody": {
+    "description": "Body of the iOS arrival prompt."
+  },
+  "debugSimulate": "SIMULATE — {name}",
+  "@debugSimulate": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "debugSimulateEnter": "Simulate ENTER",
+  "debugSimulateExit": "Simulate EXIT"
+}

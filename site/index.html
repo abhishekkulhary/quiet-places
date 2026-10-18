@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Quiet Places — your phone goes quiet where it should</title>
+  <meta name="description" content="Save the places where your phone should hush. Quiet Places silences it when you arrive and restores your ringer when you leave. Offline, no account, Android.">
+  <meta name="theme-color" content="#0A0A0A">
+  <meta property="og:title" content="Quiet Places">
+  <meta property="og:description" content="Your phone goes quiet where it should, and back to normal when you leave.">
+  <meta property="og:image" content="img/home.png">
+  <link rel="icon" type="image/png" href="img/icon.png">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="grid-bg" aria-hidden="true"></div>
+
+  <header class="nav">
+    <a class="brand" href="#top"><img src="img/icon.png" alt="" width="28" height="28"> Quiet Places</a>
+    <nav>
+      <a href="#features">Features</a>
+      <a href="#privacy">Privacy</a>
+      <a class="btn btn-small" href="#download">Download</a>
+    </nav>
+  </header>
+
+  <main id="top">
+    <section class="hero">
+      <div class="hero-text">
+        <p class="eyebrow"><span class="pulse"></span> Android · free · offline</p>
+        <h1>Your phone goes quiet <em>where it should.</em></h1>
+        <p class="lead">Save the places where your phone should hush — a cinema, an office, a
+          bedroom. Quiet Places switches to silent, vibrate or Do Not Disturb when you arrive,
+          and puts your ringer back exactly as you had it when you leave.</p>
+        <div class="cta">
+          <a class="btn" id="download-apk" href="https://github.com/__REPO__/releases/latest">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v12m0 0-5-5m5 5 5-5M5 21h14"/></svg>
+            Download for Android
+          </a>
+          <a class="btn btn-ghost" href="https://github.com/__REPO__">View source</a>
+        </div>
+        <p class="meta" id="release-meta">Latest release on GitHub</p>
+      </div>
+      <figure class="hero-shot">
+        <div class="ring" aria-hidden="true"></div>
+        <img src="img/home.png" alt="Quiet Places home screen showing live distance to each saved place">
+      </figure>
+    </section>
+
+    <section id="features" class="features">
+      <h2><span class="idx">01</span> Built for the way phones actually work</h2>
+      <div class="cards">
+        <article class="card">
+          <h3>Restores what you had</h3>
+          <p>It records your ringer state before changing anything, and gives exactly that back
+            when you leave — not a blanket "normal". Change it yourself while you're there and
+            it stops managing it. It won't fight you.</p>
+        </article>
+        <article class="card">
+          <h3>Always know where you stand</h3>
+          <p>Every place shows the distance to its centre and which side of the boundary you're
+            on — "5 m · inside by 95 m". When GPS is too poor to be sure, it says so.</p>
+        </article>
+        <article class="card">
+          <h3>Draw it on a real map</h3>
+          <p>Drag the pin, drag the edge to resize, long-press to drop a new one. Overlapping
+            places are flagged, with the setting that wins.</p>
+        </article>
+        <article class="card">
+          <h3>A fraction of a percent of battery</h3>
+          <p>Uses the operating system's own geofencing instead of polling your location.
+            Survives a reboot and keeps working with the app closed.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="gallery" aria-label="Screenshots">
+      <figure><img src="img/editor.png" alt="Map editor with draggable pin and radius" loading="lazy"><figcaption>Map editor</figcaption></figure>
+      <figure><img src="img/moment.png" alt="Confirmation shown when the phone goes quiet" loading="lazy"><figcaption>The moment it goes quiet</figcaption></figure>
+      <figure><img src="img/history.png" alt="History explaining why silencing fired or not" loading="lazy"><figcaption>Why it fired — or didn't</figcaption></figure>
+      <figure><img src="img/settings.png" alt="Settings: pause, snooze, units, map cache" loading="lazy"><figcaption>Pause, snooze, units</figcaption></figure>
+    </section>
+
+    <section id="privacy" class="privacy">
+      <h2><span class="idx">02</span> Offline by default</h2>
+      <p class="lead">Your places, their names and your history never leave your phone. No account,
+        no analytics, no crash reporting. Maps are opt-in — until you turn them on the app makes
+        no network requests at all.</p>
+      <ul class="perms">
+        <li><strong>Location, all the time</strong> — geofence transitions arrive while the app is closed; that is the whole feature.</li>
+        <li><strong>Do Not Disturb access</strong> — Android requires it to change silent and DND modes.</li>
+        <li><strong>Notifications</strong> — to tell you the moment your ringer changed.</li>
+        <li><strong>Internet</strong> — map tiles only, and only if you turn maps on.</li>
+      </ul>
+    </section>
+
+    <section id="download" class="download">
+      <h2><span class="idx">03</span> Get Quiet Places</h2>
+      <p>Download the APK from the latest GitHub release and open it on your phone (you may need to
+        allow installing from your browser). Updates install over the previous version.</p>
+      <a class="btn" id="download-apk-2" href="https://github.com/__REPO__/releases/latest">Download for Android</a>
+      <p class="note"><strong>iPhone?</strong> Apple provides no way for an app to change your ringer,
+        so there is no iOS version. A Shortcuts Focus automation is the closest hands-free equivalent.</p>
+    </section>
+  </main>
+
+  <footer>
+    <span>© <span id="year"></span> Abhishek Choudhary</span>
+    <a href="https://github.com/__REPO__">Source on GitHub</a>
+    <a href="https://abhishekkulhary.github.io/portfolio/">Portfolio</a>
+  </footer>
+
+  <script>window.QP_REPO = '__REPO__';</script>
+  <script src="main.js"></script>
+</body>
+</html>
