@@ -84,20 +84,26 @@ abstract final class AppTheme {
       textTheme: textTheme,
       extensions: [accents],
       splashFactory: InkSparkle.splashFactory,
+      // Transparent so the radar backdrop runs behind the title; the body never
+      // scrolls under a Scaffold's app bar, so nothing needs hiding there.
       appBarTheme: AppBarTheme(
-        backgroundColor: scheme.surface,
+        backgroundColor: Colors.transparent,
         surfaceTintColor: Colors.transparent,
+        scrolledUnderElevation: 0,
         elevation: 0,
         centerTitle: false,
         titleTextStyle: AppType.screenTitle.copyWith(color: scheme.onSurface),
         iconTheme: IconThemeData(color: scheme.onSurface),
       ),
       cardTheme: CardThemeData(
-        color: scheme.surfaceContainer,
+        color: Elevation.surfaceFor(scheme, Elevation.raised),
         surfaceTintColor: Colors.transparent,
         elevation: 0,
         margin: EdgeInsets.zero,
-        shape: const RoundedRectangleBorder(borderRadius: Radii.cardShape),
+        shape: RoundedRectangleBorder(
+          borderRadius: Radii.cardShape,
+          side: BorderSide(color: accents.glassEdge, width: Strokes.hairline),
+        ),
       ),
       dividerTheme: DividerThemeData(
         color: scheme.outlineVariant,

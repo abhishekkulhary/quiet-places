@@ -6,6 +6,7 @@ import '../providers/providers.dart';
 import '../theme/app_theme.dart';
 import '../theme/tokens.dart';
 import '../widgets/press.dart';
+import '../widgets/radar_backdrop.dart';
 import '../../l10n/app_localizations.dart';
 import '../l10n_extensions.dart';
 
@@ -23,7 +24,7 @@ class HistoryScreen extends ConsumerWidget {
     final log = ref.watch(tripLogStreamProvider);
     final scheme = Theme.of(context).colorScheme;
 
-    return Scaffold(
+    return QuietScaffold(
       appBar: AppBar(
         title: Text(l.historyTitle),
         titleTextStyle:

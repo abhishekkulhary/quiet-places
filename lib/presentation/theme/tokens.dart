@@ -35,6 +35,10 @@ abstract final class Palette {
   /// darkened olive whenever the accent must be *text* rather than a fill.
   static const limeInk = Color(0xFF3D5200);
 
+  /// Electric cyan: the far end of the accent gradient. Like lime it is only
+  /// ever a *fill* with [ink] on top (~14:1), never text on a light page.
+  static const cyan = Color(0xFF3CF0E0);
+
   /// Outline for markers drawn on top of map tiles.
   ///
   /// Deliberately theme-independent: OSM raster tiles are light in both light
@@ -61,18 +65,47 @@ class AppAccents extends ThemeExtension<AppAccents> {
   /// Glow used when a place is currently active/inside.
   final Color glow;
 
+  /// Hairline edge of a glass card: a whisper of the accent rather than grey,
+  /// so cards read as lit from within instead of boxed.
+  final Color glassEdge;
+
+  /// Radar rings painted behind every screen.
+  final Color backdropRing;
+
+  /// Dot grid painted behind every screen.
+  final Color backdropDot;
+
+  /// Soft radial light where the radar rings originate.
+  final Color backdropGlow;
+
   const AppAccents({
     required this.accentInk,
     required this.ring,
     required this.grid,
     required this.glow,
+    required this.glassEdge,
+    required this.backdropRing,
+    required this.backdropDot,
+    required this.backdropGlow,
   });
+
+  /// The accent as a fill: lime into cyan. Both ends carry [Palette.ink] text,
+  /// in either theme.
+  static const fill = LinearGradient(
+    colors: [Palette.lime, Palette.cyan],
+    begin: Alignment.topLeft,
+    end: Alignment.bottomRight,
+  );
 
   static const dark = AppAccents(
     accentInk: Palette.lime,
     ring: Palette.lime,
     grid: Palette.hairline,
     glow: Palette.lime,
+    glassEdge: Color(0x33C6F432), // lime @ 20%
+    backdropRing: Color(0x14C6F432), // lime @ 8%
+    backdropDot: Color(0x14F5F5F3), // chalk @ 8%
+    backdropGlow: Color(0x1F3CF0E0), // cyan @ 12%
   );
 
   static const light = AppAccents(
@@ -80,6 +113,10 @@ class AppAccents extends ThemeExtension<AppAccents> {
     ring: Palette.limeInk,
     grid: Palette.hairlineLight,
     glow: Palette.limeInk,
+    glassEdge: Color(0x333D5200), // limeInk @ 20%
+    backdropRing: Color(0x173D5200), // limeInk @ 9%
+    backdropDot: Color(0x1A0A0A0A), // ink @ 10%
+    backdropGlow: Color(0x40C6F432), // lime @ 25%
   );
 
   @override
@@ -88,12 +125,20 @@ class AppAccents extends ThemeExtension<AppAccents> {
     Color? ring,
     Color? grid,
     Color? glow,
+    Color? glassEdge,
+    Color? backdropRing,
+    Color? backdropDot,
+    Color? backdropGlow,
   }) =>
       AppAccents(
         accentInk: accentInk ?? this.accentInk,
         ring: ring ?? this.ring,
         grid: grid ?? this.grid,
         glow: glow ?? this.glow,
+        glassEdge: glassEdge ?? this.glassEdge,
+        backdropRing: backdropRing ?? this.backdropRing,
+        backdropDot: backdropDot ?? this.backdropDot,
+        backdropGlow: backdropGlow ?? this.backdropGlow,
       );
 
   @override
@@ -104,6 +149,10 @@ class AppAccents extends ThemeExtension<AppAccents> {
       ring: Color.lerp(ring, other.ring, t)!,
       grid: Color.lerp(grid, other.grid, t)!,
       glow: Color.lerp(glow, other.glow, t)!,
+      glassEdge: Color.lerp(glassEdge, other.glassEdge, t)!,
+      backdropRing: Color.lerp(backdropRing, other.backdropRing, t)!,
+      backdropDot: Color.lerp(backdropDot, other.backdropDot, t)!,
+      backdropGlow: Color.lerp(backdropGlow, other.backdropGlow, t)!,
     );
   }
 }
@@ -235,12 +284,30 @@ abstract final class Elevation {
   /// Sheets, dialogs, menus.
   static const int floating = 2;
 
+  /// How much of the page shows through a raised (glass) surface.
+  static const double glassOpacity = 0.74;
+
   /// Surface colour for a level, resolved from the scheme.
+  ///
+  /// Raised surfaces are frosted glass: translucent enough that the radar
+  /// backdrop reads through them, opaque enough to keep text contrast intact.
+  /// Floating surfaces stay solid — a sheet must hide what is beneath it.
   static Color surfaceFor(ColorScheme scheme, int level) => switch (level) {
         floating => scheme.surfaceContainerHighest,
-        raised => scheme.surfaceContainer,
+        raised => scheme.surfaceContainer.withValues(alpha: glassOpacity),
         _ => scheme.surface,
       };
+
+  /// Light cast by an active element (the place you are inside, the primary
+  /// action). Unlike [shadowFor] this applies in dark mode too — a glow is the
+  /// one form of lift a near-black ground shows well.
+  static List<BoxShadow> glowFor(Color color, {double strength = 1}) => [
+        BoxShadow(
+          color: color.withValues(alpha: 0.32 * strength),
+          blurRadius: 26,
+          spreadRadius: -6,
+        ),
+      ];
 
   /// Shadows are light-mode only; see the class doc.
   static List<BoxShadow> shadowFor(ColorScheme scheme, int level) {
@@ -261,6 +328,24 @@ abstract final class Strokes {
   static const hairline = 1.0;
   static const ring = 2.0;
   static const ringBold = 3.0;
+}
+
+/// Geometry of the radar backdrop behind every screen.
+abstract final class Backdrop {
+  /// Pitch of the dot grid.
+  static const dotSpacing = 22.0;
+  static const dotRadius = 0.9;
+
+  /// Gap between radar rings, and how many are drawn.
+  static const ringSpacing = 58.0;
+  static const ringCount = 10;
+
+  /// Where the rings originate: just off the top-right corner, so they sweep
+  /// across the header rather than sitting behind the list.
+  static const origin = Alignment(1.05, -1.02);
+
+  /// Radius of the soft light at the origin, as a fraction of screen width.
+  static const glowRadius = 1.1;
 }
 
 // ---------------------------------------------------------------------------

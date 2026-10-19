@@ -9,6 +9,7 @@ import '../theme/app_theme.dart';
 import '../../data/ringer/platform_locale.dart';
 import '../theme/tokens.dart';
 import '../widgets/press.dart';
+import '../widgets/radar_backdrop.dart';
 import 'quiet_place_editor_screen.dart';
 import 'map_consent_screen.dart';
 import 'onboarding_screen.dart';
@@ -28,7 +29,7 @@ class SettingsScreen extends ConsumerWidget {
     final snoozeActive =
         snoozeUntil != null && snoozeUntil.isAfter(DateTime.now());
 
-    return Scaffold(
+    return QuietScaffold(
       appBar: AppBar(
         title: Text(l.navSettings),
         titleTextStyle: AppType.screenTitle.copyWith(color: scheme.onSurface),
@@ -210,7 +211,8 @@ class _SettingCard extends StatelessWidget {
       decoration: BoxDecoration(
         color: Elevation.surfaceFor(scheme, Elevation.raised),
         borderRadius: Radii.cardShape,
-        border: Border.all(color: scheme.outline, width: Strokes.hairline),
+        border: Border.all(
+            color: context.accents.glassEdge, width: Strokes.hairline),
         boxShadow: Elevation.shadowFor(scheme, Elevation.raised),
       ),
       child: Column(children: children),

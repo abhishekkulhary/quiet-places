@@ -75,10 +75,15 @@ class QuietPlaceCard extends StatelessWidget {
               color: Elevation.surfaceFor(scheme, Elevation.raised),
               borderRadius: Radii.cardShape,
               border: Border.all(
-                color: _inside ? accents.ring : scheme.outline,
+                color: _inside ? accents.ring : accents.glassEdge,
                 width: _inside ? Strokes.ring : Strokes.hairline,
               ),
-              boxShadow: Elevation.shadowFor(scheme, Elevation.raised),
+              // Inside a place the card lights up; otherwise it rests. The glow
+              // is always the bright lime fill colour — the olive text accent
+              // would read as a smudge through the glass in light mode.
+              boxShadow: _inside
+                  ? Elevation.glowFor(Palette.lime, strength: 0.8)
+                  : Elevation.shadowFor(scheme, Elevation.raised),
             ),
             child: Row(
               children: [

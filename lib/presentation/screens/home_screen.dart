@@ -22,6 +22,7 @@ import '../widgets/state_views.dart';
 import '../widgets/silence_moment.dart';
 import '../widgets/undo_snackbar.dart';
 import '../widgets/quiet_place_card.dart';
+import '../widgets/radar_backdrop.dart';
 import 'quiet_place_editor_screen.dart';
 import 'history_screen.dart';
 import 'settings_screen.dart';
@@ -54,7 +55,7 @@ class _HomeScreenState extends ConsumerState<HomeScreen>
           localeName: Localizations.localeOf(context).toString(),
         );
 
-    return Scaffold(
+    return QuietScaffold(
       body: SafeArea(
         child: AdaptivePanes(
           // On a wide screen the map sits beside the list rather than being a
@@ -360,10 +361,14 @@ class _AddFab extends StatelessWidget {
           width: Sizes.fab,
           height: Sizes.fab,
           decoration: BoxDecoration(
-            color: scheme.primaryContainer,
+            gradient: AppAccents.fill,
             shape: BoxShape.circle,
-            boxShadow: Elevation.shadowFor(scheme, Elevation.floating),
-            // In dark mode a shadow is invisible, so the ring reads as the lift.
+            // The glow is the lift in both themes; the ring separates the
+            // button from any card scrolling underneath it.
+            boxShadow: [
+              ...Elevation.shadowFor(scheme, Elevation.floating),
+              ...Elevation.glowFor(Palette.cyan, strength: 1.2),
+            ],
             border: Border.all(
               color: scheme.surface,
               width: Strokes.ring,

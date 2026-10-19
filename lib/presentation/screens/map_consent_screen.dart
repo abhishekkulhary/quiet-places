@@ -5,6 +5,7 @@ import '../providers/providers.dart';
 import '../theme/app_theme.dart';
 import '../theme/tokens.dart';
 import '../widgets/press.dart';
+import '../widgets/radar_backdrop.dart';
 import '../../l10n/app_localizations.dart';
 
 /// The gate in front of the only feature that sends anything off the device.
@@ -23,7 +24,7 @@ class MapConsentScreen extends ConsumerWidget {
     final scheme = Theme.of(context).colorScheme;
     final accents = context.accents;
 
-    return Scaffold(
+    return QuietScaffold(
       appBar: AppBar(
         title: Text(l.consentTitle),
         titleTextStyle:

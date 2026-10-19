@@ -21,6 +21,7 @@ import '../../data/map/nominatim_service.dart';
 import '../../domain/usecases/detect_overlap.dart';
 import '../widgets/place_map_editor.dart';
 import '../widgets/radius_dial.dart';
+import '../widgets/radar_backdrop.dart';
 import 'map_consent_screen.dart';
 import '../../l10n/app_localizations.dart';
 import '../l10n_extensions.dart';
@@ -397,7 +398,7 @@ class _QuietPlaceEditorScreenState extends ConsumerState<QuietPlaceEditorScreen>
         final discard = await _confirmDiscard();
         if (discard && mounted) navigator.pop();
       },
-      child: Scaffold(
+      child: QuietScaffold(
       appBar: AppBar(
         title: Text(_isEditing ? l.editorTitleEdit : l.editorTitleNew),
         titleTextStyle: AppType.screenTitle.copyWith(color: scheme.onSurface),

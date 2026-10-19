@@ -8,6 +8,7 @@ import '../providers/providers.dart';
 import '../theme/app_theme.dart';
 import '../theme/tokens.dart';
 import '../widgets/press.dart';
+import '../widgets/radar_backdrop.dart';
 import 'home_screen.dart';
 import '../../l10n/app_localizations.dart';
 
@@ -91,7 +92,7 @@ class _OnboardingScreenState extends ConsumerState<OnboardingScreen>
     final isAndroid = Platform.isAndroid;
     final ringerSupported = ref.watch(ringerSupportedProvider);
 
-    return Scaffold(
+    return QuietScaffold(
       appBar: AppBar(
         title: Text(l.onboardingTitle),
         titleTextStyle: AppType.screenTitle.copyWith(color: Theme.of(context).colorScheme.onSurface),
